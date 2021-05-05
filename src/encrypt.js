@@ -4,7 +4,13 @@ const fs = require("fs");
 const path = require("path");
 
 async function encryptFile({ region, cmk, configFileLocation }) {
-  AWS.config.update({ region });
+  AWS.config.update({
+    region,
+    credentials: {
+      accessKeyId: process.evn.AWS_ACCESS_KEY_ID,
+      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+    },
+  });
 
   if (!fs.existsSync(configFileLocation)) {
     throw Error(`Conbfig file location: ${configFileLocation} doesn't exists`);
