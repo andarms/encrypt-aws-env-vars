@@ -8,7 +8,7 @@ try {
   const cmk = core.getInput("aws-cmk");
   const inputFile = core.getInput("config-file-location");
 
-  const configFileLocation = path.combine(github.workspace, inputFile);
+  const configFileLocation = path.join(github.workspace, inputFile);
   console.log(configFileLocation, github.workspace);
   const encryptedFile = encryptFile({ region, cmk, configFileLocation });
   core.setOutput("encrypted-file-location", encryptedFile);
