@@ -1,12 +1,14 @@
 const core = require("@actions/core");
 const github = require("@actions/github");
-
+const path = require("path");
 const { encryptFile } = require("./src/encrypt");
 
 try {
   const region = core.getInput("aws-region");
   const cmk = core.getInput("aws-cmk");
-  const configFileLocation = core.getInput("config-file-location");
+  const inputFile = core.getInput("config-file-location");
+
+  const configFileLocation = path.combine(github.workspace, inputFile);
 
   const encryptedFile = encryptFile({ region, cmk, configFileLocation });
   core.setOutput("encrypted-file-location", encryptedFile);
