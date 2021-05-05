@@ -1,0 +1,19 @@
+name: "Encrypt AWS Lambda Env Vars"
+description: "Encrypt the env var used for an aws lambda function"
+inputs:
+  aws-region:
+    description: "AWS region"
+    required: true
+    default: "sa-east-1"
+  aws-cmk-arn:
+    description: "cmk arn"
+    required: true
+  config-file-location:
+    description: "Location of the config file"
+    required: true
+outputs:
+  encrypted-file-location:
+    description: "The path for the encrypted file."
+runs:
+  using: "node12"
+  main: "index.js"
