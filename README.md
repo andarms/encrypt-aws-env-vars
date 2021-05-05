@@ -27,7 +27,7 @@ The path for the encrypted file.
 ```yml
 uses: actions/encrypt-aws-env-vars@v1
 with:
-  aws-region: "sa-east-1
+  aws-region: "sa-east-1"
   aws-cmk-arn: "arn:aws:kms:sa-east-1:..."
   config-file-location: "./config/lambda.config.json"
 ```

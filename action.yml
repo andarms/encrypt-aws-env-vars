@@ -16,4 +16,4 @@ outputs:
     description: "The path for the encrypted file."
 runs:
   using: "node12"
-  main: "index.js"
+  main: "dist/index.js"
