@@ -20,8 +20,7 @@ try {
   });
   core.setOutput("encrypted-file-location", encryptedFile);
 
-  const payload = JSON.stringify(github.context.payload, undefined, 2);
-  console.log(`The event payload: ${payload}`);
+  console.log(encryptedFile);
 } catch (error) {
   core.setFailed(error.message);
 }
