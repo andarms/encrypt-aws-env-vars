@@ -29,5 +29,7 @@ uses: actions/encrypt-aws-env-vars@v1
 with:
   aws-region: "sa-east-1"
   aws-cmk-arn: "arn:aws:kms:sa-east-1:..."
-  config-file-location: "./config/lambda.config.json"
+  config-file-location: "/config/lambda.config.json"
+  aws-access-key-id: "ASK..."
+  aws-secret-access-key: "ASK..."
 ```

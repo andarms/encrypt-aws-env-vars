@@ -1,14 +1,21 @@
 "use strict";
 const AWS = require("aws-sdk");
 const fs = require("fs");
+const github = require("@actions/github");
 const path = require("path");
 
-async function encryptFile({ region, cmk, configFileLocation }) {
+async function encryptFile({
+  region,
+  cmk,
+  configFileLocation,
+  accessKeyId,
+  secretAccessKey,
+}) {
   AWS.config.update({
     region,
     credentials: {
-      accessKeyId: process.evn.AWS_ACCESS_KEY_ID,
-      secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+      accessKeyId,
+      secretAccessKey,
     },
   });
 

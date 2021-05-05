@@ -11,6 +11,12 @@ inputs:
   config-file-location:
     description: "Location of the config file"
     required: true
+  aws-access-key-id:
+    description: "aws access key"
+    required: true
+  aws-secret-access-key:
+    description: "aws access key secret"
+    required: true
 outputs:
   encrypted-file-location:
     description: "The path for the encrypted file."
