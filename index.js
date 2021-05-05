@@ -11,7 +11,7 @@ try {
   const secretAccessKey = core.getInput("aws-secret-access-key");
 
   const configFileLocation = path.join(process.env.GITHUB_WORKSPACE, inputFile);
-  const encryptedFile = encryptFile({
+  const encryptedFile = await encryptFile({
     region,
     cmk,
     configFileLocation,
