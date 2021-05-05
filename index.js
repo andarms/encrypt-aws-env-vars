@@ -5,7 +5,7 @@ const { encryptFile } = require("./src/encrypt");
 
 try {
   const region = core.getInput("aws-region");
-  const cmk = core.getInput("aws-cmk");
+  const cmk = core.getInput("aws-cmk-arn");
   const inputFile = core.getInput("config-file-location");
   const accessKeyId = core.getInput("aws-access-key-id");
   const secretAccessKey = core.getInput("aws-secret-access-key");
